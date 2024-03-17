@@ -1,0 +1,105 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Tilesets/tile1.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 8 )
+
+[node name="main" type="Node2D"]
+
+[node name="1" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 464, 96, 16, 16 )
+
+[node name="2" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 48, 496, 16, 16 )
+
+[node name="biblio" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 240, 400, 16, 16 )
+
+[node name="3" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 496, 80, 16, 16 )
+
+[node name="4" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 512, 80, 16, 16 )
+
+[node name="5" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 528, 80, 16, 16 )
+
+[node name="6" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 496, 96, 16, 16 )
+
+[node name="7" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 512, 96, 16, 16 )
+
+[node name="8" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 528, 96, 16, 16 )
+
+[node name="pcoak2" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 400, 48, 16, 16 )
+
+[node name="pcoak" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 416, 48, 16, 16 )
+
+[node name="11" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 400, 32, 16, 16 )
+
+[node name="manuscrito" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 464, 32, 16, 16 )
+
+[node name="puerta" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 464, 208, 16, 16 )
+
+[node name="pared" type="Sprite" parent="."]
+visible = false
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 432, 0, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pared"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pared/StaticBody2D"]
+position = Vector2( -8, -8 )
+shape = SubResource( 1 )

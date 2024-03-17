@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/pokemonrgb.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Pkball_pkmn.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=33]
+extents = Vector2( 6.5, 12.5 )
+
+[node name="Pkball" type="StaticBody2D" groups=["item"]]
+position = Vector2( 72, -4 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 2 )
+dialogo_1 = [ "Those are pokeballs. They contain pokemon!" ]
+dialogo_2 = [ "That's PROF.OAK's last pokemon!" ]
+pkmn_num = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.5, 2.5 )
+shape = SubResource( 33 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 25
+vframes = 13
+frame = 268

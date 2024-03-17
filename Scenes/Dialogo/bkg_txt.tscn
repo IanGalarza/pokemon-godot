@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://GUI/text.png" type="Texture" id=1]
+
+[node name="bkg_txt" type="Sprite"]
+visible = false
+position = Vector2( 256, 424 )
+scale = Vector2( 1.62025, 1.64865 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 187.537, 169.923, 316.307, 74.6705 )

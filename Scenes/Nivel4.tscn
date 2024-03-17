@@ -1,0 +1,695 @@
+[gd_scene load_steps=40 format=2]
+
+[ext_resource path="res://Scripts/npc.gd" type="Script" id=1]
+[ext_resource path="res://TileSets/nivel.tres" type="TileSet" id=2]
+[ext_resource path="res://Sprites/pokemonrgb.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Nivel4.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Prof.Oak.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/Enemigo.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Pkball_pkmn.tscn" type="PackedScene" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6.125, 6.5 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 142 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "abajo"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 117 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "arr"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 142 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "izq"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 167 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "mov_abj"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 117, 192 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "mov_arr"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 142, 17 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "mov_izq"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 167, 42 ]
+}
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 6.125, 7.25 )
+
+[sub_resource type="Animation" id=17]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 174 ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "abajo"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 149 ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "arr"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 174 ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "izq"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 199 ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "mov_abj"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 149, 224 ]
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "mov_arr"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 174, 49 ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "mov_izq"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 199, 74 ]
+}
+
+[sub_resource type="Animation" id=25]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 174 ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "abajo"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 149 ]
+}
+
+[sub_resource type="Animation" id=27]
+resource_name = "arr"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 174 ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "izq"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 199 ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "mov_abj"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 149, 224 ]
+}
+
+[sub_resource type="Animation" id=30]
+resource_name = "mov_arr"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 174, 49 ]
+}
+
+[sub_resource type="Animation" id=31]
+resource_name = "mov_izq"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 199, 74 ]
+}
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 6.125, 7.25 )
+
+[sub_resource type="Animation" id=10]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 87 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "abajo"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 62 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "arr"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 87 ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "izq"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 211 ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "mov_abj"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 236, 62 ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "mov_arr"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 261, 87 ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "mov_izq"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 286, 211 ]
+}
+
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 17, 8 )
+
+[node name="Nivel4" type="Node2D" groups=["nivel"]]
+script = ExtResource( 4 )
+profOAK = ExtResource( 5 )
+
+[node name="nav" type="Navigation2D" parent="." groups=["nav"]]
+
+[node name="Suelo" type="TileMap" parent="nav"]
+z_index = -2
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+show_collision = true
+bake_navigation = true
+format = 1
+tile_data = PoolIntArray( -131074, 273, 0, -131073, 273, 0, -196608, 273, 0, -196607, 273, 0, -196606, 273, 0, -196605, 273, 0, -196604, 273, 0, -196603, 273, 0, -196602, 273, 0, -196601, 273, 0, -65538, 273, 0, -65537, 273, 0, -131072, 273, 0, -131071, 273, 0, -131070, 273, 0, -131069, 273, 0, -131068, 273, 0, -131067, 273, 0, -131066, 273, 0, -131065, 273, 0, -2, 273, 0, -1, 273, 0, -65536, 273, 0, -65535, 273, 0, -65534, 273, 0, -65533, 273, 0, -65532, 273, 0, -65531, 273, 0, -65530, 273, 0, -65529, 273, 0, 65534, 273, 0, 65535, 273, 0, 0, 273, 0, 1, 273, 0, 2, 273, 0, 3, 273, 0, 4, 273, 0, 5, 273, 0, 6, 273, 0, 7, 273, 0, 131070, 273, 0, 131071, 273, 0, 65536, 273, 0, 65537, 273, 0, 65538, 273, 0, 65539, 273, 0, 65540, 273, 0, 65541, 273, 0, 65542, 273, 0, 65543, 273, 0, 131074, 273, 0, 131075, 273, 0, 196610, 273, 0, 196611, 273, 0, 327678, 273, 0, 327679, 273, 0, 262144, 273, 0, 262145, 273, 0, 262146, 273, 0, 262147, 273, 0, 262148, 273, 0, 262149, 273, 0, 262150, 273, 0, 262151, 273, 0, 393214, 273, 0, 393215, 273, 0, 327680, 273, 0, 327681, 273, 0, 327682, 273, 0, 327683, 273, 0, 327684, 273, 0, 327685, 273, 0, 327686, 273, 0, 327687, 273, 0, 458750, 273, 0, 458751, 273, 0, 393216, 273, 0, 393217, 273, 0, 393218, 273, 0, 393219, 273, 0, 393220, 273, 0, 393221, 273, 0, 393222, 273, 0, 393223, 273, 0, 524286, 273, 0, 524287, 273, 0, 458752, 273, 0, 458753, 273, 0, 458754, 273, 0, 458755, 273, 0, 458756, 273, 0, 458757, 273, 0, 458758, 273, 0, 458759, 273, 0, 589822, 273, 0, 589823, 273, 0, 524288, 273, 0, 524289, 273, 0, 524290, 283, 0, 524291, 283, 0, 524292, 273, 0, 524293, 273, 0, 524294, 273, 0, 524295, 273, 0 )
+
+[node name="Nivel" type="TileMap" parent="." groups=["tile"]]
+z_index = -1
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -262147, 322, 0, -262146, 322, 0, -262145, 322, 0, -327680, 322, 0, -327679, 322, 0, -327678, 322, 0, -327677, 322, 0, -327676, 322, 0, -327675, 322, 0, -327674, 322, 0, -327673, 322, 0, -327672, 322, 0, -196611, 322, 0, -196610, 107, 0, -196609, 107, 0, -262144, 107, 0, -262143, 107, 0, -262142, 260, 0, -262141, 260, 0, -262140, 246, 0, -262139, 246, 0, -262138, 246, 0, -262137, 246, 0, -262136, 322, 0, -131075, 322, 0, -131074, 164, 0, -131073, 151, 0, -196608, 184, 0, -196607, 186, 0, -196604, 247, 0, -196603, 247, 0, -196602, 247, 0, -196601, 247, 0, -196600, 322, 0, -65539, 322, 0, -65538, 254, 0, -65537, 255, 0, -131072, 202, 0, -131071, 204, 0, -131064, 322, 0, -3, 322, 0, -65532, 184, 0, -65531, 185, 0, -65530, 186, 0, -65528, 322, 0, 65533, 322, 0, 4, 288, 0, 5, 203, 0, 6, 289, 0, 8, 322, 0, 131069, 322, 0, 65544, 322, 0, 196605, 322, 0, 196606, 246, 0, 196607, 246, 0, 131072, 246, 0, 131073, 246, 0, 131076, 246, 0, 131077, 246, 0, 131078, 246, 0, 131079, 246, 0, 131080, 322, 0, 262141, 322, 0, 262142, 247, 0, 262143, 247, 0, 196608, 247, 0, 196609, 247, 0, 196612, 247, 0, 196613, 247, 0, 196614, 247, 0, 196615, 247, 0, 196616, 322, 0, 327677, 322, 0, 262152, 322, 0, 393213, 322, 0, 327688, 322, 0, 458749, 322, 0, 393224, 322, 0, 524285, 322, 0, 458760, 322, 0, 589821, 322, 0, 524290, 283, 0, 524291, 283, 0, 524296, 322, 0, 655357, 322, 0, 655358, 322, 0, 655359, 322, 0, 589824, 322, 0, 589825, 322, 0, 589826, 322, 0, 589827, 322, 0, 589828, 322, 0, 589829, 322, 0, 589830, 322, 0, 589831, 322, 0, 589832, 322, 0 )
+
+[node name="spawn_j" type="Position2D" parent="." groups=["spawn"]]
+position = Vector2( 40, 120 )
+
+[node name="spawn_OAK" type="Position2D" parent="."]
+position = Vector2( 56, 120 )
+
+[node name="OAK_T" type="Position2D" parent="."]
+position = Vector2( 56, -8 )
+
+[node name="Enemigo" type="KinematicBody2D" parent="." groups=["npc", "rival"]]
+position = Vector2( 40, -8 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 6 )
+dialogo_1 = [ "rival_name: yo player_name", "rival_name: Gramps isn't around!" ]
+dialogo_2 = [ "rival_name: Heh, I don't need to be greedy like you! ", "Go ahead and choose, player_name!" ]
+dialogo_3 = [ "rival_name: I'll take this one, then!", "rival_name received a Bulbasaur" ]
+dialogo_4 = [ "rival_name: My Pokemon looks a lot stronger." ]
+rival_n = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemigo"]
+position = Vector2( 0.125, 0.5 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Enemigo"]
+texture = ExtResource( 3 )
+hframes = 25
+vframes = 13
+frame = 142
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemigo"]
+anims/RESET = SubResource( 2 )
+anims/abajo = SubResource( 3 )
+anims/arr = SubResource( 4 )
+anims/izq = SubResource( 5 )
+anims/mov_abj = SubResource( 6 )
+anims/mov_arr = SubResource( 7 )
+anims/mov_izq = SubResource( 8 )
+
+[node name="Palo" type="Node2D" parent="Enemigo"]
+
+[node name="RayCast2D" type="RayCast2D" parent="Enemigo/Palo"]
+enabled = true
+cast_to = Vector2( 0, -16 )
+
+[node name="pos" type="Position2D" parent="Enemigo/Palo"]
+position = Vector2( 0, -16 )
+
+[node name="limites" type="Node2D" parent="Enemigo"]
+
+[node name="min" type="Position2D" parent="Enemigo/limites"]
+
+[node name="max" type="Position2D" parent="Enemigo/limites"]
+
+[node name="Cientifico" type="KinematicBody2D" parent="." groups=["npc"]]
+position = Vector2( 8, 120 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 1 )
+dialogo_1 = [ "I study POKEMON as PROF.OAK's AIDE." ]
+t_mov = 1.0
+en_lugar = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cientifico"]
+position = Vector2( 0.125, 0.25 )
+shape = SubResource( 24 )
+
+[node name="Sprite" type="Sprite" parent="Cientifico"]
+texture = ExtResource( 3 )
+hframes = 25
+vframes = 13
+frame = 174
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cientifico"]
+anims/RESET = SubResource( 17 )
+anims/abajo = SubResource( 18 )
+anims/arr = SubResource( 19 )
+anims/izq = SubResource( 20 )
+anims/mov_abj = SubResource( 21 )
+anims/mov_arr = SubResource( 22 )
+anims/mov_izq = SubResource( 23 )
+
+[node name="Palo" type="Node2D" parent="Cientifico"]
+
+[node name="RayCast2D" type="RayCast2D" parent="Cientifico/Palo"]
+enabled = true
+cast_to = Vector2( 0, -16 )
+
+[node name="pos" type="Position2D" parent="Cientifico/Palo"]
+position = Vector2( 0, -16 )
+
+[node name="limites" type="Node2D" parent="Cientifico"]
+
+[node name="min" type="Position2D" parent="Cientifico/limites"]
+
+[node name="max" type="Position2D" parent="Cientifico/limites"]
+
+[node name="Cientifico2" type="KinematicBody2D" parent="." groups=["npc"]]
+position = Vector2( 104, 120 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 1 )
+dialogo_1 = [ "I study POKEMON as PROF.OAK's AIDE." ]
+t_mov = 1.0
+en_lugar = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cientifico2"]
+position = Vector2( 0.125, 0.25 )
+shape = SubResource( 24 )
+
+[node name="Sprite" type="Sprite" parent="Cientifico2"]
+texture = ExtResource( 3 )
+hframes = 25
+vframes = 13
+frame = 174
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cientifico2"]
+anims/RESET = SubResource( 25 )
+anims/abajo = SubResource( 26 )
+anims/arr = SubResource( 27 )
+anims/izq = SubResource( 28 )
+anims/mov_abj = SubResource( 29 )
+anims/mov_arr = SubResource( 30 )
+anims/mov_izq = SubResource( 31 )
+
+[node name="Palo" type="Node2D" parent="Cientifico2"]
+
+[node name="RayCast2D" type="RayCast2D" parent="Cientifico2/Palo"]
+enabled = true
+cast_to = Vector2( 0, -16 )
+
+[node name="pos" type="Position2D" parent="Cientifico2/Palo"]
+position = Vector2( 0, -16 )
+
+[node name="limites" type="Node2D" parent="Cientifico2"]
+
+[node name="min" type="Position2D" parent="Cientifico2/limites"]
+
+[node name="max" type="Position2D" parent="Cientifico2/limites"]
+
+[node name="ChicaLab" type="KinematicBody2D" parent="." groups=["npc"]]
+position = Vector2( 8, 88 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 1 )
+dialogo_1 = [ "PROF.OAK is the authority on POKEMON!", "Many POKEMON trainers hold him in high regard!" ]
+movil = true
+t_mov = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChicaLab"]
+position = Vector2( 0.125, 0.25 )
+shape = SubResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="ChicaLab"]
+texture = ExtResource( 3 )
+hframes = 25
+vframes = 13
+frame = 87
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ChicaLab"]
+anims/RESET = SubResource( 10 )
+anims/abajo = SubResource( 11 )
+anims/arr = SubResource( 12 )
+anims/izq = SubResource( 13 )
+anims/mov_abj = SubResource( 14 )
+anims/mov_arr = SubResource( 15 )
+anims/mov_izq = SubResource( 16 )
+
+[node name="Palo" type="Node2D" parent="ChicaLab"]
+
+[node name="RayCast2D" type="RayCast2D" parent="ChicaLab/Palo"]
+enabled = true
+cast_to = Vector2( 0, -16 )
+
+[node name="pos" type="Position2D" parent="ChicaLab/Palo"]
+position = Vector2( 0, -16 )
+
+[node name="limites" type="Node2D" parent="ChicaLab"]
+
+[node name="min" type="Position2D" parent="ChicaLab/limites"]
+position = Vector2( -32, -32 )
+
+[node name="max" type="Position2D" parent="ChicaLab/limites"]
+position = Vector2( 16, 64 )
+
+[node name="Evitar_Salida" type="Area2D" parent="."]
+position = Vector2( 47, 48 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Evitar_Salida"]
+shape = SubResource( 32 )
+
+[node name="Pkball" parent="." instance=ExtResource( 7 )]
+position = Vector2( 73, -2 )
+pkmn_num = 4
+
+[node name="Pkball2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 89, -2 )
+pkmn_num = 7
+
+[node name="Pkball3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 104, -2 )
+
+[connection signal="animation_finished" from="Enemigo/AnimationPlayer" to="Enemigo" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_finished" from="Cientifico/AnimationPlayer" to="Cientifico" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_finished" from="Cientifico2/AnimationPlayer" to="Cientifico2" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_finished" from="ChicaLab/AnimationPlayer" to="ChicaLab" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="body_entered" from="Evitar_Salida" to="." method="_on_Evitar_Salida_body_entered"]

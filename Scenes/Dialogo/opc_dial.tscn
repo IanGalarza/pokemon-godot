@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://GUI/text.png" type="Texture" id=1]
+[ext_resource path="res://Fonts/Pokemon X and Y.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/opc_dial.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 26
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 26
+font_data = ExtResource( 2 )
+
+[node name="opc_dial" type="Node2D"]
+position = Vector2( 26, 0 )
+script = ExtResource( 3 )
+
+[node name="bkg_txt" type="Sprite" parent="."]
+position = Vector2( 570, 330 )
+scale = Vector2( 0.284809, 1.14865 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 187.537, 169.923, 316.307, 74.6705 )
+
+[node name="si" type="Label" parent="."]
+margin_left = 569.0
+margin_top = 297.0
+margin_right = 684.0
+margin_bottom = 331.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "YES"
+
+[node name="no" type="Label" parent="."]
+margin_left = 571.0
+margin_top = 328.0
+margin_right = 646.0
+margin_bottom = 362.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "NO"
+
+[node name="cursor" type="Sprite" parent="."]
+position = Vector2( 548, 315 )
+scale = Vector2( 5.83333, 4.125 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 109.646, 59.6619, 6.04007, 8.09626 )
+
+[node name="si1" type="Position2D" parent="."]
+position = Vector2( 548, 315 )
+
+[node name="si2" type="Position2D" parent="."]
+position = Vector2( 548, 345 )

@@ -1,0 +1,1520 @@
+[gd_scene load_steps=79 format=2]
+
+[ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/nivel1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/nivel2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Nivel3.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Dialogo/txt.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Dialogo/tmp.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/nivel5.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Nivel4.tscn" type="PackedScene" id=9]
+[ext_resource path="res://GUI/mapa.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Dialogo/bkg_txt.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/borde.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Card.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Mote.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Dialogo/opc_dial.tscn" type="PackedScene" id=15]
+[ext_resource path="res://GUI/text.png" type="Texture" id=16]
+[ext_resource path="res://Scripts/mnu_ppal.gd" type="Script" id=17]
+[ext_resource path="res://Fonts/Pokemon X and Y.ttf" type="DynamicFontData" id=18]
+[ext_resource path="res://GUI/barrahp.png" type="Texture" id=19]
+[ext_resource path="res://Scripts/menu_pokemon.gd" type="Script" id=20]
+[ext_resource path="res://GUI/pkmn_icon.png" type="Texture" id=21]
+[ext_resource path="res://menu/monologo.png" type="Texture" id=22]
+[ext_resource path="res://GUI/medallas.png" type="Texture" id=23]
+[ext_resource path="res://Scripts/personaje.gd" type="Script" id=24]
+[ext_resource path="res://GUI/black.png" type="Texture" id=25]
+[ext_resource path="res://menu/intro1.png" type="Texture" id=26]
+[ext_resource path="res://Scripts/mnu_batalla.gd" type="Script" id=27]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.807843, 0.972549, 0.898039, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "fadein"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0.807843, 0.972549, 0.898039, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "fadeout"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.807843, 0.972549, 0.898039, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=75]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=78]
+resource_name = "idle"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=76]
+resource_name = "in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 100.0 ]
+}
+
+[sub_resource type="Animation" id=77]
+resource_name = "out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 100.0, 0.0 ]
+}
+
+[sub_resource type="DynamicFont" id=5]
+size = 15
+outline_color = Color( 0.160784, 0.160784, 0.160784, 1 )
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 20
+outline_color = Color( 0.160784, 0.160784, 0.160784, 1 )
+font_data = ExtResource( 18 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 19 )
+region_rect = Rect2( 0, 0, 50, 4 )
+modulate_color = Color( 0.952941, 0.121569, 0.121569, 1 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 19 )
+region_rect = Rect2( 0, 0, 50, 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 24
+outline_color = Color( 0.160784, 0.160784, 0.160784, 1 )
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=79]
+size = 24
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=72]
+size = 24
+outline_color = Color( 0.160784, 0.160784, 0.160784, 1 )
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=73]
+size = 24
+outline_color = Color( 0.160784, 0.160784, 0.160784, 1 )
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=74]
+size = 24
+outline_color = Color( 0.160784, 0.160784, 0.160784, 1 )
+font_data = ExtResource( 18 )
+
+[sub_resource type="Animation" id=44]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=45]
+resource_name = "agua"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=46]
+resource_name = "bicho"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 9, 8 ]
+}
+
+[sub_resource type="Animation" id=47]
+resource_name = "elemento"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 11, 10 ]
+}
+
+[sub_resource type="Animation" id=48]
+resource_name = "normal"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 3 ]
+}
+
+[sub_resource type="Animation" id=49]
+resource_name = "planta"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 4, 5 ]
+}
+
+[sub_resource type="Animation" id=50]
+resource_name = "vuelo"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 13, 12 ]
+}
+
+[sub_resource type="Animation" id=51]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=52]
+resource_name = "agua"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=53]
+resource_name = "bicho"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 9, 8 ]
+}
+
+[sub_resource type="Animation" id=54]
+resource_name = "elemento"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 11, 10 ]
+}
+
+[sub_resource type="Animation" id=55]
+resource_name = "normal"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 3 ]
+}
+
+[sub_resource type="Animation" id=56]
+resource_name = "planta"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 4, 5 ]
+}
+
+[sub_resource type="Animation" id=57]
+resource_name = "vuelo"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 13, 12 ]
+}
+
+[sub_resource type="Animation" id=58]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=59]
+resource_name = "agua"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=60]
+resource_name = "bicho"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 9, 8 ]
+}
+
+[sub_resource type="Animation" id=61]
+resource_name = "elemento"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 11, 10 ]
+}
+
+[sub_resource type="Animation" id=62]
+resource_name = "normal"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 3 ]
+}
+
+[sub_resource type="Animation" id=63]
+resource_name = "planta"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 4, 5 ]
+}
+
+[sub_resource type="Animation" id=64]
+resource_name = "vuelo"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 13, 12 ]
+}
+
+[sub_resource type="Animation" id=65]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=66]
+resource_name = "agua"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=67]
+resource_name = "bicho"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 9, 8 ]
+}
+
+[sub_resource type="Animation" id=68]
+resource_name = "elemento"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 11, 10 ]
+}
+
+[sub_resource type="Animation" id=69]
+resource_name = "normal"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 3 ]
+}
+
+[sub_resource type="Animation" id=70]
+resource_name = "planta"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 4, 5 ]
+}
+
+[sub_resource type="Animation" id=71]
+resource_name = "vuelo"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 13, 12 ]
+}
+
+[sub_resource type="Animation" id=42]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=37]
+resource_name = "agua"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=38]
+resource_name = "bicho"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 9, 8 ]
+}
+
+[sub_resource type="Animation" id=39]
+resource_name = "elemento"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 11, 10 ]
+}
+
+[sub_resource type="Animation" id=40]
+resource_name = "normal"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 3 ]
+}
+
+[sub_resource type="Animation" id=41]
+resource_name = "planta"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 4, 5 ]
+}
+
+[sub_resource type="Animation" id=43]
+resource_name = "vuelo"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("S:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 13, 12 ]
+}
+
+[node name="Main" type="CanvasModulate" groups=["main"]]
+color = Color( 0.807843, 0.972549, 0.898039, 1 )
+script = ExtResource( 1 )
+card = ExtResource( 13 )
+mote = ExtResource( 14 )
+menu_opc = ExtResource( 15 )
+player = ExtResource( 3 )
+nivel1 = ExtResource( 2 )
+nivel2 = ExtResource( 4 )
+nivel3 = ExtResource( 5 )
+nivel4 = ExtResource( 9 )
+nivel5 = ExtResource( 8 )
+
+[node name="tmr" type="Timer" parent="." groups=["tmr"]]
+autostart = true
+
+[node name="game" type="YSort" parent="." groups=["ysort"]]
+
+[node name="fade" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+anims/fadein = SubResource( 2 )
+anims/fadeout = SubResource( 3 )
+
+[node name="GUI" type="CanvasLayer" parent="." groups=["gui"]]
+
+[node name="battle_load" type="TextureProgress" parent="GUI" groups=["carga_battle"]]
+margin_left = 107.0
+margin_top = 30.0
+margin_right = 682.0
+margin_bottom = 546.0
+texture_progress = ExtResource( 25 )
+fill_mode = 4
+nine_patch_stretch = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GUI/battle_load"]
+anims/RESET = SubResource( 75 )
+anims/idle = SubResource( 78 )
+anims/in = SubResource( 76 )
+anims/out = SubResource( 77 )
+
+[node name="bkg_txt" parent="GUI" instance=ExtResource( 11 )]
+position = Vector2( 392, 456 )
+
+[node name="mnu_batalla" type="Node2D" parent="GUI"]
+visible = false
+script = ExtResource( 27 )
+
+[node name="stats_rival" type="Node2D" parent="GUI/mnu_batalla"]
+
+[node name="SR" parent="GUI/mnu_batalla/stats_rival" instance=ExtResource( 6 )]
+visible = true
+margin_left = 61.0
+margin_top = 75.0
+margin_right = 351.0
+margin_bottom = 135.0
+text = "NOMBRE"
+
+[node name="p" type="Position2D" parent="GUI/mnu_batalla/stats_rival/SR"]
+position = Vector2( 24, 29 )
+
+[node name="HP" parent="GUI/mnu_batalla/stats_rival/SR" instance=ExtResource( 6 )]
+visible = true
+margin_left = -18.0
+margin_top = 18.0
+margin_right = 272.0
+margin_bottom = 78.0
+custom_fonts/font = SubResource( 5 )
+text = "HP:"
+
+[node name="LN" parent="GUI/mnu_batalla/stats_rival/SR" instance=ExtResource( 6 )]
+visible = true
+margin_left = 149.0
+margin_top = -6.0
+margin_right = 439.0
+margin_bottom = 54.0
+custom_fonts/font = SubResource( 6 )
+text = ":LN"
+
+[node name="ProgressBar" type="ProgressBar" parent="GUI/mnu_batalla/stats_rival/SR"]
+margin_left = 138.0
+margin_top = 43.0
+margin_right = 286.0
+margin_bottom = 57.0
+custom_styles/fg = SubResource( 7 )
+custom_styles/bg = SubResource( 8 )
+percent_visible = false
+
+[node name="stats_player" type="Node2D" parent="GUI/mnu_batalla"]
+
+[node name="SP" parent="GUI/mnu_batalla/stats_player" instance=ExtResource( 6 )]
+visible = true
+margin_left = 272.0
+margin_top = 309.0
+margin_right = 562.0
+margin_bottom = 369.0
+text = "NOMBRE"
+
+[node name="p" type="Position2D" parent="GUI/mnu_batalla/stats_player/SP"]
+position = Vector2( 24, 29 )
+
+[node name="HP" parent="GUI/mnu_batalla/stats_player/SP" instance=ExtResource( 6 )]
+visible = true
+margin_top = 20.0
+margin_right = 298.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 5 )
+text = "HP:"
+
+[node name="LN" parent="GUI/mnu_batalla/stats_player/SP" instance=ExtResource( 6 )]
+visible = true
+margin_left = 149.0
+margin_top = -6.0
+margin_right = 439.0
+margin_bottom = 54.0
+custom_fonts/font = SubResource( 6 )
+text = ":LN"
+
+[node name="VIDA" parent="GUI/mnu_batalla/stats_player/SP" instance=ExtResource( 6 )]
+visible = true
+margin_left = 88.0
+margin_top = 43.0
+margin_right = 378.0
+margin_bottom = 103.0
+custom_fonts/font = SubResource( 4 )
+text = "??/??"
+
+[node name="ProgressBar" type="ProgressBar" parent="GUI/mnu_batalla/stats_player/SP"]
+margin_left = 164.0
+margin_top = 44.0
+margin_right = 312.0
+margin_bottom = 58.0
+custom_styles/fg = SubResource( 7 )
+custom_styles/bg = SubResource( 8 )
+percent_visible = false
+
+[node name="white_bkg" type="Sprite" parent="GUI/mnu_batalla"]
+position = Vector2( 399.874, 281.875 )
+scale = Vector2( 3.38462, 6.50667 )
+z_index = -2
+texture = ExtResource( 26 )
+region_enabled = true
+region_rect = Rect2( 162.064, 40.004, 156.569, 75.9746 )
+
+[node name="bkg_op1" parent="GUI/mnu_batalla" instance=ExtResource( 11 )]
+visible = true
+position = Vector2( 523.5, 456 )
+scale = Vector2( 0.787973, 1.64865 )
+
+[node name="c1" type="Sprite" parent="GUI/mnu_batalla/bkg_op1"]
+position = Vector2( -127.542, -12.7377 )
+scale = Vector2( 4.44179, 2.0363 )
+texture = ExtResource( 16 )
+region_enabled = true
+region_rect = Rect2( 109.063, 59.3495, 7.20464, 7.85961 )
+
+[node name="1" type="Label" parent="GUI/mnu_batalla/bkg_op1"]
+margin_left = -100.891
+margin_top = -27.9016
+margin_right = -34.8914
+margin_bottom = 4.09839
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 79 )
+text = "F I G H T"
+autowrap = true
+
+[node name="p" type="Position2D" parent="GUI/mnu_batalla/bkg_op1/1"]
+position = Vector2( -30, 16 )
+
+[node name="2" type="Label" parent="GUI/mnu_batalla/bkg_op1"]
+margin_left = -100.891
+margin_top = -0.606552
+margin_right = -34.8914
+margin_bottom = 31.3934
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 79 )
+text = "I T E M"
+autowrap = true
+
+[node name="p" type="Position2D" parent="GUI/mnu_batalla/bkg_op1/2"]
+position = Vector2( -30, 16 )
+
+[node name="3" type="Label" parent="GUI/mnu_batalla/bkg_op1"]
+margin_left = 15.0
+margin_top = -27.0
+margin_right = 134.0
+margin_bottom = 5.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 79 )
+text = "P O K E M O N "
+autowrap = true
+
+[node name="p" type="Position2D" parent="GUI/mnu_batalla/bkg_op1/3"]
+position = Vector2( -30, 16 )
+
+[node name="4" type="Label" parent="GUI/mnu_batalla/bkg_op1"]
+margin_left = 14.5948
+margin_top = -0.606537
+margin_right = 60.5948
+margin_bottom = 31.3935
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 79 )
+text = "R U N"
+autowrap = true
+
+[node name="p" type="Position2D" parent="GUI/mnu_batalla/bkg_op1/4"]
+position = Vector2( -30, 16 )
+
+[node name="mnu_ppal" type="Node2D" parent="GUI" groups=["menu"]]
+visible = false
+script = ExtResource( 17 )
+
+[node name="bkg_mnu" type="Sprite" parent="GUI/mnu_ppal"]
+position = Vector2( 396, 285 )
+scale = Vector2( 0.607595, 5.27027 )
+texture = ExtResource( 16 )
+region_enabled = true
+region_rect = Rect2( 187.537, 169.923, 316.307, 74.6705 )
+
+[node name="c1" type="Sprite" parent="GUI/mnu_ppal"]
+position = Vector2( 329, 186 )
+scale = Vector2( 3.50001, 3.35714 )
+texture = ExtResource( 16 )
+region_enabled = true
+region_rect = Rect2( 109.063, 59.3495, 7.20464, 7.85961 )
+
+[node name="o1" parent="GUI/mnu_ppal" instance=ExtResource( 6 )]
+visible = true
+margin_left = 250.0
+margin_top = 157.0
+margin_right = 540.0
+margin_bottom = 217.0
+text = "POKEDEX"
+
+[node name="p1" type="Position2D" parent="GUI/mnu_ppal/o1"]
+position = Vector2( 78, 30 )
+
+[node name="o2" parent="GUI/mnu_ppal" instance=ExtResource( 6 )]
+visible = true
+margin_left = 250.0
+margin_top = 197.0
+margin_right = 540.0
+margin_bottom = 257.0
+text = "POKEMON"
+
+[node name="p2" type="Position2D" parent="GUI/mnu_ppal/o2"]
+position = Vector2( 78, 30 )
+
+[node name="o3" parent="GUI/mnu_ppal" instance=ExtResource( 6 )]
+visible = true
+margin_left = 250.0
+margin_top = 237.0
+margin_right = 540.0
+margin_bottom = 297.0
+text = "ITEMS"
+
+[node name="p3" type="Position2D" parent="GUI/mnu_ppal/o3"]
+position = Vector2( 78, 30 )
+
+[node name="o4" parent="GUI/mnu_ppal" instance=ExtResource( 6 )]
+visible = true
+margin_left = 250.0
+margin_top = 277.0
+margin_right = 540.0
+margin_bottom = 337.0
+text = "NOMBRE"
+
+[node name="p4" type="Position2D" parent="GUI/mnu_ppal/o4"]
+position = Vector2( 78, 30 )
+
+[node name="o5" parent="GUI/mnu_ppal" instance=ExtResource( 6 )]
+visible = true
+margin_left = 250.0
+margin_top = 317.0
+margin_right = 540.0
+margin_bottom = 377.0
+text = "GUARDAR"
+
+[node name="p5" type="Position2D" parent="GUI/mnu_ppal/o5"]
+position = Vector2( 78, 30 )
+
+[node name="o6" parent="GUI/mnu_ppal" instance=ExtResource( 6 )]
+visible = true
+margin_left = 250.0
+margin_top = 357.0
+margin_right = 540.0
+margin_bottom = 417.0
+text = "SALIR"
+
+[node name="p6" type="Position2D" parent="GUI/mnu_ppal/o6"]
+position = Vector2( 78, 30 )
+
+[node name="personaje" type="Node2D" parent="GUI/mnu_ppal"]
+visible = false
+script = ExtResource( 24 )
+
+[node name="background" type="Sprite" parent="GUI/mnu_ppal/personaje"]
+position = Vector2( 402.5, 302 )
+scale = Vector2( 52.7, 60.25 )
+texture = ExtResource( 16 )
+region_enabled = true
+region_rect = Rect2( 512, 56, 10, 8 )
+
+[node name="bordes" type="Sprite" parent="GUI/mnu_ppal/personaje"]
+position = Vector2( 395, 160.5 )
+scale = Vector2( 1.58125, 2.66234 )
+texture = ExtResource( 16 )
+region_enabled = true
+region_rect = Rect2( 185.968, 168.144, 320.247, 77.9166 )
+
+[node name="personaje" type="Sprite" parent="GUI/mnu_ppal/personaje"]
+position = Vector2( 562, 160 )
+scale = Vector2( 2.47727, 2.99091 )
+texture = ExtResource( 22 )
+region_enabled = true
+region_rect = Rect2( 328.231, 152.637, 55.0757, 55.0757 )
+
+[node name="bordes2" type="Sprite" parent="GUI/mnu_ppal/personaje"]
+position = Vector2( 396, 406 )
+scale = Vector2( 1.58125, 2.90909 )
+texture = ExtResource( 16 )
+region_enabled = true
+region_rect = Rect2( 185.968, 168.144, 320.247, 77.9166 )
+
+[node name="nombre" type="Label" parent="GUI/mnu_ppal/personaje"]
+margin_left = 169.0
+margin_top = 86.0
+margin_right = 369.0
+margin_bottom = 127.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 72 )
+text = "NAME/"
+valign = 1
+autowrap = true
+
+[node name="dinero" type="Label" parent="GUI/mnu_ppal/personaje"]
+margin_left = 171.0
+margin_top = 141.0
+margin_right = 371.0
+margin_bottom = 182.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 73 )
+text = "MONEY/"
+valign = 1
+autowrap = true
+
+[node name="tiempo" type="Label" parent="GUI/mnu_ppal/personaje"]
+margin_left = 176.0
+margin_top = 195.0
+margin_right = 376.0
+margin_bottom = 236.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 74 )
+text = "TIME/"
+valign = 1
+autowrap = true
+
+[node name="medallas" type="Node2D" parent="GUI/mnu_ppal/personaje"]
+position = Vector2( 388, 410 )
+scale = Vector2( 3, 3 )
+
+[node name="1" type="Sprite" parent="GUI/mnu_ppal/personaje/medallas"]
+position = Vector2( -55, -16.6667 )
+texture = ExtResource( 23 )
+region_enabled = true
+region_rect = Rect2( 7.44414, 7.13696, 30.8045, 24.6436 )
+
+[node name="2" type="Sprite" parent="GUI/mnu_ppal/personaje/medallas"]
+position = Vector2( -26.6667, -16.3333 )
+texture = ExtResource( 23 )
+region_enabled = true
+region_rect = Rect2( 38.3989, 6.53589, 31.5558, 25.0944 )
+
+[node name="3" type="Sprite" parent="GUI/mnu_ppal/personaje/medallas"]
+position = Vector2( 1.33334, -16.6667 )
+texture = ExtResource( 23 )
+region_enabled = true
+region_rect = Rect2( 70.8564, 6.83643, 30.6543, 24.0425 )
+
+[node name="4" type="Sprite" parent="GUI/mnu_ppal/personaje/medallas"]
+position = Vector2( 25.6667, -15 )
+texture = ExtResource( 23 )
+region_enabled = true
+region_rect = Rect2( 103.763, 6.98698, 25.996, 24.3431 )
+
+[node name="5" type="Sprite" parent="GUI/mnu_ppal/personaje/medallas"]
+position = Vector2( -53.6667, 10.6667 )
+texture = ExtResource( 23 )
+region_enabled = true
+region_rect = Rect2( 7.74273, 31.4803, 30.8045, 24.1928 )
+
+[node name="6" type="Sprite" parent="GUI/mnu_ppal/personaje/medallas"]
+position = Vector2( -26.3333, 10.6667 )
+texture = ExtResource( 23 )
+region_enabled = true
+region_rect = Rect2( 39.4488, 31.3301, 27.0479, 24.0425 )
+
+[node name="7" type="Sprite" parent="GUI/mnu_ppal/personaje/medallas"]
+position = Vector2( 1.00001, 11 )
+texture = ExtResource( 23 )
+region_enabled = true
+region_rect = Rect2( 71.155, 31.1798, 30.6543, 24.6436 )
+
+[node name="8" type="Sprite" parent="GUI/mnu_ppal/personaje/medallas"]
+position = Vector2( 26.6667, 10.6667 )
+texture = ExtResource( 23 )
+region_enabled = true
+region_rect = Rect2( 103.612, 31.3301, 26.8976, 24.1928 )
+
+[node name="pokemon" type="Node2D" parent="GUI/mnu_ppal"]
+visible = false
+script = ExtResource( 20 )
+
+[node name="background" type="Sprite" parent="GUI/mnu_ppal/pokemon"]
+position = Vector2( 402.5, 302 )
+scale = Vector2( 52.7, 60.25 )
+texture = ExtResource( 16 )
+region_enabled = true
+region_rect = Rect2( 512, 56, 10, 8 )
+
+[node name="bkg_mnu2" type="Sprite" parent="GUI/mnu_ppal/pokemon"]
+position = Vector2( 395, 458 )
+scale = Vector2( 1.57911, 1.47297 )
+texture = ExtResource( 16 )
+region_enabled = true
+region_rect = Rect2( 187.537, 169.923, 316.307, 74.6705 )
+
+[node name="c2" type="Sprite" parent="GUI/mnu_ppal/pokemon"]
+position = Vector2( 169, 94 )
+scale = Vector2( 3.50001, 3.35714 )
+texture = ExtResource( 16 )
+region_enabled = true
+region_rect = Rect2( 109.063, 59.3495, 7.20464, 7.85961 )
+
+[node name="P1" parent="GUI/mnu_ppal/pokemon" instance=ExtResource( 6 )]
+visible = true
+margin_left = 141.0
+margin_top = 65.0
+margin_right = 431.0
+margin_bottom = 125.0
+text = "NOMBRE"
+
+[node name="p1" type="Position2D" parent="GUI/mnu_ppal/pokemon/P1"]
+position = Vector2( 24, 29 )
+
+[node name="HP" parent="GUI/mnu_ppal/pokemon/P1" instance=ExtResource( 6 )]
+visible = true
+margin_left = -18.0
+margin_top = 18.0
+margin_right = 272.0
+margin_bottom = 78.0
+custom_fonts/font = SubResource( 5 )
+text = "HP:"
+
+[node name="LN" parent="GUI/mnu_ppal/pokemon/P1" instance=ExtResource( 6 )]
+visible = true
+margin_left = 149.0
+margin_top = -6.0
+margin_right = 439.0
+margin_bottom = 54.0
+custom_fonts/font = SubResource( 6 )
+text = ":LN"
+
+[node name="VIDA" parent="GUI/mnu_ppal/pokemon/P1" instance=ExtResource( 6 )]
+visible = true
+margin_left = 174.0
+margin_top = 16.0
+margin_right = 464.0
+margin_bottom = 76.0
+custom_fonts/font = SubResource( 4 )
+text = "??/??"
+
+[node name="ProgressBar" type="ProgressBar" parent="GUI/mnu_ppal/pokemon/P1"]
+margin_left = 138.0
+margin_top = 43.0
+margin_right = 286.0
+margin_bottom = 57.0
+custom_styles/fg = SubResource( 7 )
+custom_styles/bg = SubResource( 8 )
+percent_visible = false
+
+[node name="S" type="Sprite" parent="GUI/mnu_ppal/pokemon/P1"]
+position = Vector2( 81, 26 )
+scale = Vector2( 3.28125, 3 )
+texture = ExtResource( 21 )
+hframes = 14
+frame = 1
+
+[node name="A" type="AnimationPlayer" parent="GUI/mnu_ppal/pokemon/P1"]
+anims/RESET = SubResource( 44 )
+anims/agua = SubResource( 45 )
+anims/bicho = SubResource( 46 )
+anims/elemento = SubResource( 47 )
+anims/normal = SubResource( 48 )
+anims/planta = SubResource( 49 )
+anims/vuelo = SubResource( 50 )
+
+[node name="P2" parent="GUI/mnu_ppal/pokemon" instance=ExtResource( 6 )]
+margin_left = 141.0
+margin_top = 131.0
+margin_right = 431.0
+margin_bottom = 191.0
+text = "NOMBRE"
+
+[node name="p2" type="Position2D" parent="GUI/mnu_ppal/pokemon/P2"]
+position = Vector2( 24, 30 )
+
+[node name="HP" parent="GUI/mnu_ppal/pokemon/P2" instance=ExtResource( 6 )]
+visible = true
+margin_left = -18.0
+margin_top = 18.0
+margin_right = 272.0
+margin_bottom = 78.0
+custom_fonts/font = SubResource( 5 )
+text = "HP:"
+
+[node name="LN" parent="GUI/mnu_ppal/pokemon/P2" instance=ExtResource( 6 )]
+visible = true
+margin_left = 149.0
+margin_top = -6.0
+margin_right = 439.0
+margin_bottom = 54.0
+custom_fonts/font = SubResource( 6 )
+text = ":LN"
+
+[node name="VIDA" parent="GUI/mnu_ppal/pokemon/P2" instance=ExtResource( 6 )]
+visible = true
+margin_left = 174.0
+margin_top = 16.0
+margin_right = 464.0
+margin_bottom = 76.0
+custom_fonts/font = SubResource( 4 )
+text = "??/??"
+
+[node name="ProgressBar" type="ProgressBar" parent="GUI/mnu_ppal/pokemon/P2"]
+margin_left = 138.0
+margin_top = 43.0
+margin_right = 286.0
+margin_bottom = 57.0
+custom_styles/fg = SubResource( 7 )
+custom_styles/bg = SubResource( 8 )
+percent_visible = false
+
+[node name="S" type="Sprite" parent="GUI/mnu_ppal/pokemon/P2"]
+position = Vector2( 81, 34 )
+scale = Vector2( 3.28125, 3 )
+texture = ExtResource( 21 )
+hframes = 14
+frame = 4
+
+[node name="A" type="AnimationPlayer" parent="GUI/mnu_ppal/pokemon/P2"]
+root_node = NodePath("../../P1")
+anims/RESET = SubResource( 51 )
+anims/agua = SubResource( 52 )
+anims/bicho = SubResource( 53 )
+anims/elemento = SubResource( 54 )
+anims/normal = SubResource( 55 )
+anims/planta = SubResource( 56 )
+anims/vuelo = SubResource( 57 )
+
+[node name="P3" parent="GUI/mnu_ppal/pokemon" instance=ExtResource( 6 )]
+margin_left = 141.0
+margin_top = 203.0
+margin_right = 431.0
+margin_bottom = 263.0
+text = "NOMBRE"
+
+[node name="p3" type="Position2D" parent="GUI/mnu_ppal/pokemon/P3"]
+position = Vector2( 24, 30 )
+
+[node name="HP" parent="GUI/mnu_ppal/pokemon/P3" instance=ExtResource( 6 )]
+visible = true
+margin_left = -18.0
+margin_top = 18.0
+margin_right = 272.0
+margin_bottom = 78.0
+custom_fonts/font = SubResource( 5 )
+text = "HP:"
+
+[node name="LN" parent="GUI/mnu_ppal/pokemon/P3" instance=ExtResource( 6 )]
+visible = true
+margin_left = 149.0
+margin_top = -6.0
+margin_right = 439.0
+margin_bottom = 54.0
+custom_fonts/font = SubResource( 6 )
+text = ":LN"
+
+[node name="VIDA" parent="GUI/mnu_ppal/pokemon/P3" instance=ExtResource( 6 )]
+visible = true
+margin_left = 174.0
+margin_top = 16.0
+margin_right = 464.0
+margin_bottom = 76.0
+custom_fonts/font = SubResource( 4 )
+text = "??/??"
+
+[node name="ProgressBar" type="ProgressBar" parent="GUI/mnu_ppal/pokemon/P3"]
+margin_left = 138.0
+margin_top = 43.0
+margin_right = 286.0
+margin_bottom = 57.0
+custom_styles/fg = SubResource( 7 )
+custom_styles/bg = SubResource( 8 )
+percent_visible = false
+
+[node name="S" type="Sprite" parent="GUI/mnu_ppal/pokemon/P3"]
+position = Vector2( 81, 36 )
+scale = Vector2( 3.28125, 3 )
+texture = ExtResource( 21 )
+hframes = 14
+frame = 4
+
+[node name="A" type="AnimationPlayer" parent="GUI/mnu_ppal/pokemon/P3"]
+root_node = NodePath("../../P1")
+anims/RESET = SubResource( 58 )
+anims/agua = SubResource( 59 )
+anims/bicho = SubResource( 60 )
+anims/elemento = SubResource( 61 )
+anims/normal = SubResource( 62 )
+anims/planta = SubResource( 63 )
+anims/vuelo = SubResource( 64 )
+
+[node name="P4" parent="GUI/mnu_ppal/pokemon" instance=ExtResource( 6 )]
+margin_left = 142.0
+margin_top = 262.0
+margin_right = 432.0
+margin_bottom = 322.0
+text = "NOMBRE"
+
+[node name="p4" type="Position2D" parent="GUI/mnu_ppal/pokemon/P4"]
+position = Vector2( 24, 30 )
+
+[node name="HP" parent="GUI/mnu_ppal/pokemon/P4" instance=ExtResource( 6 )]
+visible = true
+margin_left = -18.0
+margin_top = 18.0
+margin_right = 272.0
+margin_bottom = 78.0
+custom_fonts/font = SubResource( 5 )
+text = "HP:"
+
+[node name="LN" parent="GUI/mnu_ppal/pokemon/P4" instance=ExtResource( 6 )]
+visible = true
+margin_left = 149.0
+margin_top = -6.0
+margin_right = 439.0
+margin_bottom = 54.0
+custom_fonts/font = SubResource( 6 )
+text = ":LN"
+
+[node name="VIDA" parent="GUI/mnu_ppal/pokemon/P4" instance=ExtResource( 6 )]
+visible = true
+margin_left = 174.0
+margin_top = 16.0
+margin_right = 464.0
+margin_bottom = 76.0
+custom_fonts/font = SubResource( 4 )
+text = "??/??"
+
+[node name="ProgressBar" type="ProgressBar" parent="GUI/mnu_ppal/pokemon/P4"]
+margin_left = 138.0
+margin_top = 43.0
+margin_right = 286.0
+margin_bottom = 57.0
+custom_styles/fg = SubResource( 7 )
+custom_styles/bg = SubResource( 8 )
+percent_visible = false
+
+[node name="S" type="Sprite" parent="GUI/mnu_ppal/pokemon/P4"]
+position = Vector2( 81, 33 )
+scale = Vector2( 3.28125, 3 )
+texture = ExtResource( 21 )
+hframes = 14
+frame = 4
+
+[node name="A" type="AnimationPlayer" parent="GUI/mnu_ppal/pokemon/P4"]
+root_node = NodePath("../../P1")
+anims/RESET = SubResource( 65 )
+anims/agua = SubResource( 66 )
+anims/bicho = SubResource( 67 )
+anims/elemento = SubResource( 68 )
+anims/normal = SubResource( 69 )
+anims/planta = SubResource( 70 )
+anims/vuelo = SubResource( 71 )
+
+[node name="P5" parent="GUI/mnu_ppal/pokemon" instance=ExtResource( 6 )]
+margin_left = 144.0
+margin_top = 321.0
+margin_right = 434.0
+margin_bottom = 381.0
+text = "NOMBRE"
+
+[node name="p5" type="Position2D" parent="GUI/mnu_ppal/pokemon/P5"]
+position = Vector2( 24, 30 )
+
+[node name="HP" parent="GUI/mnu_ppal/pokemon/P5" instance=ExtResource( 6 )]
+visible = true
+margin_left = -18.0
+margin_top = 18.0
+margin_right = 272.0
+margin_bottom = 78.0
+custom_fonts/font = SubResource( 5 )
+text = "HP:"
+
+[node name="LN" parent="GUI/mnu_ppal/pokemon/P5" instance=ExtResource( 6 )]
+visible = true
+margin_left = 149.0
+margin_top = -6.0
+margin_right = 439.0
+margin_bottom = 54.0
+custom_fonts/font = SubResource( 6 )
+text = ":LN"
+
+[node name="VIDA" parent="GUI/mnu_ppal/pokemon/P5" instance=ExtResource( 6 )]
+visible = true
+margin_left = 174.0
+margin_top = 16.0
+margin_right = 464.0
+margin_bottom = 76.0
+custom_fonts/font = SubResource( 4 )
+text = "??/??"
+
+[node name="ProgressBar" type="ProgressBar" parent="GUI/mnu_ppal/pokemon/P5"]
+margin_left = 138.0
+margin_top = 43.0
+margin_right = 286.0
+margin_bottom = 57.0
+custom_styles/fg = SubResource( 7 )
+custom_styles/bg = SubResource( 8 )
+percent_visible = false
+
+[node name="S" type="Sprite" parent="GUI/mnu_ppal/pokemon/P5"]
+position = Vector2( 81, 32 )
+scale = Vector2( 3.28125, 3 )
+texture = ExtResource( 21 )
+hframes = 14
+frame = 4
+
+[node name="A" type="AnimationPlayer" parent="GUI/mnu_ppal/pokemon/P5"]
+root_node = NodePath("../../P1")
+anims/RESET = SubResource( 42 )
+anims/agua = SubResource( 37 )
+anims/bicho = SubResource( 38 )
+anims/elemento = SubResource( 39 )
+anims/normal = SubResource( 40 )
+anims/planta = SubResource( 41 )
+anims/vuelo = SubResource( 43 )
+
+[node name="texto" type="Label" parent="GUI/mnu_ppal/pokemon"]
+margin_left = 156.0
+margin_top = 418.0
+margin_right = 631.0
+margin_bottom = 499.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Choose a pokemon."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="txt" parent="GUI" instance=ExtResource( 6 )]
+margin_left = 144.0
+margin_top = 408.0
+margin_right = 640.0
+margin_bottom = 504.0
+
+[node name="tmp" parent="GUI" instance=ExtResource( 7 )]
+
+[node name="mapa" type="Sprite" parent="GUI" groups=["mapa"]]
+visible = false
+position = Vector2( 392, 280 )
+scale = Vector2( 3.22981, 3.58824 )
+texture = ExtResource( 10 )
+region_enabled = true
+region_rect = Rect2( 168.92, 12.1182, 161.08, 136.882 )
+
+[node name="borde" parent="GUI" instance=ExtResource( 12 )]
+
+[connection signal="timeout" from="tmr" to="." method="_on_tmr_timeout"]
+[connection signal="animation_finished" from="fade" to="." method="_on_fade_animation_finished"]
+[connection signal="animation_finished" from="GUI/battle_load/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="GUI/tmp" to="." method="_on_tmp_timeout"]

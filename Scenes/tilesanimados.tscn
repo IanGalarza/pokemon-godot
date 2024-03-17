@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://TileSets/tile1.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 8 )
+
+[node name="main" type="Node2D"]
+
+[node name="flor" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 320, 96, 16, 16 )
+
+[node name="flor2" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 336, 96, 16, 16 )
+
+[node name="flor3" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 352, 96, 16, 16 )
+
+[node name="agua" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 336, 160, 16, 16 )
+
+[node name="agua2" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 352, 160, 16, 16 )
+
+[node name="agua3" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 368, 160, 16, 16 )
+
+[node name="agua4" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 384, 160, 16, 16 )
+
+[node name="agua5" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 384, 160, 16, 16 )
+
+[node name="agua6" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 368, 160, 16, 16 )
+
+[node name="agua7" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 352, 160, 16, 16 )
+
+[node name="agua8" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 336, 160, 16, 16 )
+
+[node name="pared" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 432, 0, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pared"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pared/StaticBody2D"]
+position = Vector2( -8, -8 )
+shape = SubResource( 1 )

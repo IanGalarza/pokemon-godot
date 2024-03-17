@@ -1,0 +1,4 @@
+[gd_scene format=2]
+
+[node name="tmp" type="Timer"]
+wait_time = 0.05

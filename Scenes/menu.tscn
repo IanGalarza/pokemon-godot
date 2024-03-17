@@ -1,0 +1,487 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://menu/intro1.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/menu.gd" type="Script" id=2]
+[ext_resource path="res://GUI/text.png" type="Texture" id=3]
+[ext_resource path="res://Fonts/Pokemon X and Y.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Scenes/Dialogo/bkg_txt.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Dialogo/txt.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Dialogo/tmp.tscn" type="PackedScene" id=7]
+[ext_resource path="res://menu/monologo.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Main.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/borde.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Mote.tscn" type="PackedScene" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("3:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../white_bkg:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "start"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("3:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../white_bkg:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[node name="menu" type="Node2D" groups=["main"]]
+script = ExtResource( 2 )
+dialogo_1 = [ "Hello there!", "Welcome to the world of POKEMON!", "My name is OAK!", "People call me the POKEMON prof!" ]
+dialogo_2 = [ "This world is inhabited by creatures called POKEMON!", "For some people, POKEMON are pets.", "Others use them for fights.", "Myself...", "I study POKEMON as a profession." ]
+dialogo_3 = [ "First, what is your name?" ]
+dialogo_4 = [ "Right! So your name is" ]
+dialogo_5 = [ "This is my grand-son. ", "He's been your rival since you were a baby.", "...Erm, what is his name again?" ]
+dialogo_6 = [ "That's right! I remember now!", "His name is" ]
+dialogo_7 = [ "", "Your very own POKEMON legend is about to unfold!", "A world of dreams and adventures with POKEMON awaits!", " let's go!" ]
+scn_juego = ExtResource( 9 )
+scn_mote = ExtResource( 11 )
+
+[node name="GUI" type="CanvasLayer" parent="." groups=["gui"]]
+
+[node name="white_bkg" type="Sprite" parent="GUI"]
+position = Vector2( 399.874, 281.875 )
+scale = Vector2( 3.38462, 6.50667 )
+z_index = -2
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 162.064, 40.004, 156.569, 75.9746 )
+
+[node name="1" type="Node2D" parent="GUI"]
+position = Vector2( 151.874, 41.8752 )
+
+[node name="titulo" type="Sprite" parent="GUI/1"]
+position = Vector2( 248, 143.89 )
+scale = Vector2( 3.13924, 2.87462 )
+z_index = -1
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( -0.00666046, 640.409, 158.647, 78.1882 )
+
+[node name="personaje" type="Sprite" parent="GUI/1"]
+position = Vector2( 376, 376 )
+scale = Vector2( 2.89143, 2.46718 )
+z_index = -1
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 324.111, 720.048, 39.3128, 55.5801 )
+
+[node name="2" type="Node2D" parent="GUI"]
+visible = false
+position = Vector2( 136, 56 )
+
+[node name="marco" type="Sprite" parent="GUI/2"]
+position = Vector2( 201.196, 105.719 )
+scale = Vector2( 1.21145, 2.54814 )
+z_index = -1
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 187.707, 169.825, 315.769, 74.7363 )
+
+[node name="select" type="Sprite" parent="GUI/2"]
+position = Vector2( 40, 64 )
+scale = Vector2( 2.16902, 2.57238 )
+z_index = -1
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 107.024, 57.3208, 11.376, 11.9448 )
+
+[node name="op1" type="Label" parent="GUI/2"]
+margin_left = 56.0
+margin_top = 48.0
+margin_right = 136.0
+margin_bottom = 80.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "New Game"
+
+[node name="op2" type="Label" parent="GUI/2"]
+margin_left = 56.0
+margin_top = 88.0
+margin_right = 128.0
+margin_bottom = 120.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Options"
+
+[node name="op3" type="Label" parent="GUI/2"]
+visible = false
+margin_left = 56.0
+margin_top = 128.0
+margin_right = 134.0
+margin_bottom = 160.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Continue"
+
+[node name="0" type="Position2D" parent="GUI/2"]
+position = Vector2( 40, 64 )
+
+[node name="1" type="Position2D" parent="GUI/2"]
+position = Vector2( 40, 104 )
+
+[node name="2" type="Position2D" parent="GUI/2"]
+position = Vector2( 40, 144 )
+
+[node name="3" type="Node2D" parent="GUI"]
+visible = false
+position = Vector2( 40, 128 )
+
+[node name="marco" type="Sprite" parent="GUI/3"]
+position = Vector2( 352, 144 )
+scale = Vector2( 3.36828, 3.45777 )
+z_index = -1
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 327.86, 24.6098, 55.9389, 55.0169 )
+
+[node name="4" type="Node2D" parent="GUI"]
+visible = false
+position = Vector2( 48, 112 )
+
+[node name="marco" type="Sprite" parent="GUI/4"]
+position = Vector2( 368, 168 )
+scale = Vector2( 3.36828, 3.45777 )
+z_index = -1
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 328.235, 87.9492, 55.3542, 55.5802 )
+
+[node name="5" type="Node2D" parent="GUI"]
+visible = false
+position = Vector2( 72, 104 )
+
+[node name="marco" type="Sprite" parent="GUI/5"]
+position = Vector2( 520, 176 )
+scale = Vector2( 3.36828, 3.45777 )
+z_index = -1
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 328.244, 280.12, 55.5173, 55.5172 )
+
+[node name="6" type="Node2D" parent="GUI"]
+visible = false
+position = Vector2( 136, 56 )
+
+[node name="marco" type="Sprite" parent="GUI/6"]
+position = Vector2( 109.196, 105.719 )
+scale = Vector2( 0.627325, 2.54814 )
+z_index = -1
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 187.707, 169.825, 315.769, 74.7363 )
+
+[node name="select" type="Sprite" parent="GUI/6"]
+position = Vector2( 40, 64 )
+scale = Vector2( 2.16902, 2.57238 )
+z_index = -1
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 107.024, 57.3208, 11.376, 11.9448 )
+
+[node name="op1" type="Label" parent="GUI/6"]
+margin_left = 56.0
+margin_top = 48.0
+margin_right = 136.0
+margin_bottom = 80.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Nuevo Nombre"
+
+[node name="op2" type="Label" parent="GUI/6"]
+margin_left = 56.0
+margin_top = 88.0
+margin_right = 128.0
+margin_bottom = 120.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Rojo"
+
+[node name="op3" type="Label" parent="GUI/6"]
+margin_left = 56.0
+margin_top = 128.0
+margin_right = 134.0
+margin_bottom = 160.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Ash"
+
+[node name="0" type="Position2D" parent="GUI/6"]
+position = Vector2( 40, 64 )
+
+[node name="1" type="Position2D" parent="GUI/6"]
+position = Vector2( 40, 104 )
+
+[node name="2" type="Position2D" parent="GUI/6"]
+position = Vector2( 40, 144 )
+
+[node name="7" type="Node2D" parent="GUI"]
+visible = false
+position = Vector2( 72, 104 )
+
+[node name="marco" type="Sprite" parent="GUI/7"]
+position = Vector2( 520, 176 )
+scale = Vector2( 3.36828, 3.45777 )
+z_index = -1
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 328.244, 280.12, 55.5173, 55.5172 )
+
+[node name="8" type="Node2D" parent="GUI"]
+visible = false
+position = Vector2( 56, 104 )
+
+[node name="marco" type="Sprite" parent="GUI/8"]
+position = Vector2( 520, 176 )
+scale = Vector2( 3.36828, 3.45777 )
+z_index = -1
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 328.288, 216.307, 55.4632, 55.7337 )
+
+[node name="9" type="Node2D" parent="GUI"]
+visible = false
+position = Vector2( 136, 56 )
+
+[node name="marco" type="Sprite" parent="GUI/9"]
+position = Vector2( 109.196, 105.719 )
+scale = Vector2( 0.627325, 2.54814 )
+z_index = -1
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 187.707, 169.825, 315.769, 74.7363 )
+
+[node name="select" type="Sprite" parent="GUI/9"]
+position = Vector2( 40, 64 )
+scale = Vector2( 2.16902, 2.57238 )
+z_index = -1
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 107.024, 57.3208, 11.376, 11.9448 )
+
+[node name="op1" type="Label" parent="GUI/9"]
+margin_left = 56.0
+margin_top = 48.0
+margin_right = 136.0
+margin_bottom = 80.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Nuevo Nombre"
+
+[node name="op2" type="Label" parent="GUI/9"]
+margin_left = 56.0
+margin_top = 88.0
+margin_right = 128.0
+margin_bottom = 120.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Azul"
+
+[node name="op3" type="Label" parent="GUI/9"]
+margin_left = 56.0
+margin_top = 128.0
+margin_right = 134.0
+margin_bottom = 160.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Gary"
+
+[node name="0" type="Position2D" parent="GUI/9"]
+position = Vector2( 40, 64 )
+
+[node name="1" type="Position2D" parent="GUI/9"]
+position = Vector2( 40, 104 )
+
+[node name="2" type="Position2D" parent="GUI/9"]
+position = Vector2( 40, 144 )
+
+[node name="10" type="Node2D" parent="GUI"]
+visible = false
+position = Vector2( -112, 80 )
+
+[node name="marco" type="Sprite" parent="GUI/10"]
+position = Vector2( 520, 176 )
+scale = Vector2( 3.36828, 3.45777 )
+z_index = -1
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 328.288, 216.307, 55.4632, 55.7337 )
+
+[node name="11" type="Node2D" parent="GUI"]
+visible = false
+position = Vector2( 48, 72 )
+
+[node name="marco" type="Sprite" parent="GUI/11"]
+position = Vector2( 376, 184 )
+scale = Vector2( 3.36828, 3.45777 )
+z_index = -1
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 328.244, 280.12, 55.5173, 55.5172 )
+
+[node name="12" type="Node2D" parent="GUI"]
+visible = false
+position = Vector2( 48, 72 )
+
+[node name="1" type="Sprite" parent="GUI/12"]
+position = Vector2( 376, 184 )
+scale = Vector2( 3.36828, 3.45777 )
+z_index = -1
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 328.244, 280.12, 55.5173, 55.5172 )
+
+[node name="2" type="Sprite" parent="GUI/12"]
+visible = false
+position = Vector2( 376, 184 )
+scale = Vector2( 3.36828, 3.45777 )
+z_index = -1
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 392.24, 280.156, 55.3888, 55.3888 )
+
+[node name="3" type="Sprite" parent="GUI/12"]
+position = Vector2( 376, 184 )
+scale = Vector2( 3.36828, 3.45777 )
+z_index = -1
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 456.115, 280.159, 55.6458, 55.6458 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GUI/12"]
+anims/RESET = SubResource( 2 )
+anims/start = SubResource( 3 )
+
+[node name="bkg_txt" parent="GUI" instance=ExtResource( 5 )]
+position = Vector2( 392, 456 )
+
+[node name="tmp" parent="GUI" instance=ExtResource( 7 )]
+
+[node name="txt" parent="GUI" instance=ExtResource( 6 )]
+margin_left = 144.0
+margin_top = 408.0
+margin_right = 640.0
+margin_bottom = 504.0
+
+[node name="borde" parent="GUI" instance=ExtResource( 10 )]
+
+[connection signal="animation_finished" from="GUI/12/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="GUI/tmp" to="." method="_on_tmp_timeout"]
