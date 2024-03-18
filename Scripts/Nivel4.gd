@@ -87,17 +87,17 @@ func procesar_instancia():
 			
 			if(Gamelogic.lista_pokemons[0].numero == 4): #Charmander
 				$Pkball2.queue_free()
-				rival.save_pkm(7)
+				rival.save_pkm(7, 5)
 			#	p = Pokemon.crear_pokemon(7, "", Gamelogic.rival_name, 5)
 			#	rival.lista_pokemons.append(p)
 			elif(Gamelogic.lista_pokemons[0].numero == 7): #Squirtle
 				$Pkball3.queue_free()
-				rival.save_pkm(1)
+				rival.save_pkm(1, 5)
 			#	p = Pokemon.crear_pokemon(1, "", Gamelogic.rival_name, 5)
 			#	rival.lista_pokemons.append(p)
 			elif(Gamelogic.lista_pokemons[0].numero == 1): #Bulbasaur
 				$Pkball.queue_free()
-				rival.save_pkm(4)
+				rival.save_pkm(4, 5)
 			#	p = Pokemon.crear_pokemon(4, "", Gamelogic.rival_name, 5)
 			#	rival.lista_pokemons.append(p)
 			Gamelogic.transicion = false

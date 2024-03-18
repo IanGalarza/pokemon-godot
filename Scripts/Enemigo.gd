@@ -34,7 +34,7 @@ func _ready():
 	Gamelogic.reemplazar_nombre(dialogo_2)
 	Gamelogic.reemplazar_nombre(dialogo_3)
 	Gamelogic.reemplazar_nombre(dialogo_4)
-	main.cargar_riv_dat(self)
+	#main.cargar_riv_dat(self)
 
 
 func _physics_process(delta):
